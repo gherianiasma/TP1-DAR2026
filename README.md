@@ -28,3 +28,28 @@ Le serveur attend la connexion du client. Lorsque le client se connecte, le serv
 J'ai remplacé `localhost` par `127.0.0.1` et vérifié que la connexion fonctionne toujours sur le même ordinateur.
 
 ![client ip.png](captures/client%20ip.png)
+
+## 7. modification de serveur
+
+Le serveur attend la connexion du client, reçoit un entier envoyé par celui-ci, calcule le produit de cet entier par 5 et renvoie le résultat.
+
+Les classes DataInputStream et DataOutputStream permettent de recevoir et d’envoyer des entiers, y compris les valeurs négatives.
+
+Capture d’écran : Ajouter une capture du code de la classe Server.java.
+![serveur 1-2.png](captures/serveur%201-2.png)
+
+## 7. modification de client
+
+Le client se connecte au serveur et demande à l’utilisateur de saisir un entier au clavier. Il envoie cette valeur au serveur, reçoit le résultat du calcul et l’affiche dans la console.
+
+Capture d’écran : Ajouter une capture du code de la classe Client.java.
+![client 1-2.png](captures/client%201-2.png)
+
+## 8. execution et tests
+
+Le serveur est lancé en premier, puis le client.
+
+Plusieurs valeurs sont testées afin de vérifier le fonctionnement du service.
+![test serveur 1-2.png](captures/test%20serveur%201-2.png)
+
+![test client 1-2.png](captures/test%20client%201-2.png)

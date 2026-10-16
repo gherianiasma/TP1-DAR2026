@@ -1,26 +1,39 @@
 
 package clientPackage;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
-
     public static void main(String[] args) {
+        try (Socket socket = new Socket("localhost", 1234);
+             DataInputStream in = new DataInputStream(
+                     socket.getInputStream());
+             DataOutputStream out = new DataOutputStream(
+                     socket.getOutputStream());
+             Scanner scanner = new Scanner(System.in)) {
 
-        try {
-            // Étape 1 : afficher l'état du client
-            System.out.println(
-                    "Je suis un client pas encore connecté..."
-            );
+            System.out.println("Connecté au serveur !");
 
-            // Étape 2 : se connecter au serveur
-            Socket socket = new Socket("127.0.0.1", 1234);
+            while (true) {
+                System.out.print("Donner un entier (0 pour quitter) : ");
+                int x = scanner.nextInt();
 
-            System.out.println("Je suis un client connecté");
+                out.writeInt(x);
+                out.flush();
 
-            // Étape 3 : fermer la socket
-            socket.close();
+                if (x == 0) {
+                    System.out.println("Déconnexion...");
+                    break;
+                }
+
+                int resultat = in.readInt();
+
+                System.out.println("Résultat = " + resultat);
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
