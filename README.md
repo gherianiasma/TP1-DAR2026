@@ -35,7 +35,7 @@ Le serveur attend la connexion du client, reçoit un entier envoyé par celui-ci
 
 Les classes DataInputStream et DataOutputStream permettent de recevoir et d’envoyer des entiers, y compris les valeurs négatives.
 
-Capture d’écran : Ajouter une capture du code de la classe Server.java.
+Capture d’écran : Ajouter une capture du code de la classe Server.java. 
 ![serveur 1-2.png](captures/serveur%201-2.png)
 
 ## 7. modification de client
